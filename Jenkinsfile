@@ -18,10 +18,8 @@ pipeline {
 
         stage('error') {
           steps {
-            try {
+            warnError('Script failed!') {
               error 'Failed'
-            } catch (ex) {
-              unstable('Script failed!')
             }
           }
         }
