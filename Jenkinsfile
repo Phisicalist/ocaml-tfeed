@@ -9,8 +9,19 @@ pipeline {
     }
 
     stage('Get green') {
-      steps {
-        echo 'Getting green'
+      parallel {
+        stage('Get green') {
+          steps {
+            echo 'Getting green'
+          }
+        }
+
+        stage('') {
+          steps {
+            error 'Failed'
+          }
+        }
+
       }
     }
 
