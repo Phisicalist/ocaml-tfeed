@@ -4,7 +4,7 @@ pipeline {
     stage('Get backoffice release') {
       steps {
         echo 'Get backoffice release id'
-        powershell(returnStatus: true, script: 'Invoke-RestMethod -Uri "https://postman-echo.com/get?foo1=bar1&foo2=bar2" -Method Get')
+        powershell(returnStatus: true, script: 'Invoke-RestMethod -Uri "https://postman-echo.com/get?foo1=bar1&foo2=bar2" -Method Get', returnStdout: true)
       }
     }
 
