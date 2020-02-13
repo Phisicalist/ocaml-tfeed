@@ -19,10 +19,6 @@ pipeline {
         stage('error') {
           steps {
             error 'Failed'
-            warnError(message: 'Catched error') {
-              echo 'All good'
-            }
-
           }
         }
 
