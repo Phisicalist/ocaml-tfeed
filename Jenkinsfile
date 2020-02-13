@@ -4,7 +4,7 @@ pipeline {
     stage('Get backoffice release') {
       steps {
         echo 'Get backoffice release id'
-        powershell(returnStatus: true, script: 'Call api')
+        powershell(returnStatus: true, script: 'Invoke-RestMethod -Uri https://postman-echo.com/get?foo1=bar1&foo2=bar2 -Method Post')
       }
     }
 
@@ -18,9 +18,10 @@ pipeline {
 
         stage('error') {
           steps {
-            warnError('Script failed!') {
+            warnError(message: 'Script failed!') {
               error 'Failed'
             }
+
           }
         }
 
