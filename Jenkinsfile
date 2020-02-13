@@ -4,7 +4,7 @@ pipeline {
     stage('Get backoffice release') {
       steps {
         echo 'Get backoffice release id'
-        sh 'curl -s -o /dev/null -w "%{http_code}" http://www.example.org/'
+        powershell(returnStatus: true, script: 'Call api')
       }
     }
 
