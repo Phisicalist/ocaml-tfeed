@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Get backoffice release') {
       steps {
@@ -43,8 +43,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    Dev = 'dev'
   }
 }
